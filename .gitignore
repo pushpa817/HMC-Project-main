@@ -1,0 +1,31 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PHP
+*.log
+
+# Environment
+.env
+.env.local
+
+# Composer
+composer.lock
+
+# Database (local config - add if needed)
+# database.php - Keep this in repo, but change credentials before deployment
+
+# Node (if added later)
+node_modules/
+package-lock.json
+
+# Temporary files
+*.tmp
+*.temp

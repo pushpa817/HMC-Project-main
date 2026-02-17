@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Gotu&display=swap'); 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* Prevent changing background color on auto-complete */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 30px white inset !important; /* Adjust to your background color */
+    box-shadow: 0 0 0 30px white inset !important; /* Adjust to your background color */
+    -webkit-text-fill-color: #000; /* Change to your text color */
+}
+
+
+:root {
+    /* ===== Colors ===== */
+     --purple: #7d2ae8;
+    --light-grey: #adadad;
+}
+
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  backface-visibility: hidden;
+  border-radius: 50% 0 0 50%;
+}
+
+
+
+.cover img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 10;
+}
+
+.cover .text {
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cover .text::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  opacity: 0.5;
+  background: #7d2ae8;
+}
+
+.cover .text .text-1,
+.cover .text .text-2 {
+  z-index: 20;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-right:15%;
+  text-align:right;
+  font-family: "Gotu", serif;
+
+}
+
+
+.form-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  top: 10%;
+  right: 60%;
+  height: 80%;
+  width: 30%;
+  z-index: 100;
+  background:white;
+  border-radius: 1rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-container h3{
+    color: var( --purple);
+    padding: 0 0 20px 0;
+}
+
+
+form .txt_field {
+    position: relative;
+    border-bottom: 2px solid var(--light-grey);
+    margin: 1.875rem 0;
+}
+
+.txt_field select, 
+.txt_field input {
+    width: 100%;
+    padding: 0 5px;
+    height: 2.5rem;
+    font-size: 1rem;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+
+
+.txt_field span::before {
+    content: "";
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var( --purple);
+    transition: 0.5s;
+}
+
+
+.custom-select {
+    appearance: none; 
+    overflow: visible;
+}
+
+.custom-icon {
+    position: absolute;
+    top: 50%;
+    right: 10px; 
+    transform: translateY(-50%);
+    color: var( --purple); 
+    font-size: 1.1rem;
+    pointer-events: auto;
+}
+
+.txt_field select:focus ~ span::before,
+.txt_field select:valid ~ span::before,
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before {
+    width: 100%;
+}
+
+.forgot_password {
+    margin: -5px 0 20px 5px;
+    color: var( --purple);
+    cursor: pointer;
+    font-size: 0.875rem;
+    float: right;
+}
+
+.forgot_password a {
+    color: var( --purple);
+    text-decoration: none;
+}
+
+.forgot_password a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: -6px;
+}
+
+
+
+.log-btn,
+.back-btn {
+    border-radius: 0.5rem;
+    background-color: var(--purple);
+    border: none;
+    color: #fff;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 7px 16px;
+    width: 100%;
+    transition: all 0.5s;
+    cursor: pointer;
+    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+    margin-top:1rem;
+  }
+  
+  .log-btn,
+  .back-btn{
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .log-btn:before {
+    content: '>>';
+    position: absolute;
+    opacity: 0;  
+    top: 7px;
+    left: -20px;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+
+  .back-btn:after{
+    content: '<<';
+    position: absolute;
+    opacity: 0;  
+    top: 7px;
+    right: -20px;
+    transition: 0.5s;
+    font-weight: bold;
+  }
+  
+  .back-btn:hover::after{
+    opacity: 1;
+    right: 2rem;
+  }
+
+  .log-btn:hover:before {
+    opacity: 1;
+    left: 2rem;
+  }
+  .log-btn:active,
+  .back-btn:active {
+    animation: pulse 0.4s ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
