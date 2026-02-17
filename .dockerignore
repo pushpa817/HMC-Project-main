@@ -1,0 +1,50 @@
+# Docker build files
+.docker/
+
+# Development dependencies
+vendor/
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Composer lock (for production, lock file might be included)
+# composer.lock
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+*.odt
+*.docx
+*.pdf
+
+# Project files
+project/pushpa/
+project/saniya/
+project/*.zip
+
+# Image files not needed for demo
+project/*.PNG
+project/*.jpg
+project/IMG_*
+project/*.lock
