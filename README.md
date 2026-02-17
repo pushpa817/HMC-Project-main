@@ -2,7 +2,15 @@
 
 A comprehensive web-based management platform for hostel/residential hall administration at educational institutions. This system manages rooms, mess, amenities, complaints, and staff across multiple halls with role-based access control.
 
-## 🎯 Overview
+## � Live Demo
+
+**Coming Soon!** Deployment in progress on Render.com...
+
+For now, try the [Docker setup](#-installation--setup) for local testing.
+
+See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for deployment instructions.
+
+## �🎯 Overview
 
 The Hall Management and Complaint System (HMC) is designed to streamline the operations of multi-hall residential facilities. It provides a unified platform for students, wardens, mess managers, staff managers, and administrators to manage accommodation, dining, amenities, and complaint resolution efficiently.
 

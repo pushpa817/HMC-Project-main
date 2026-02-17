@@ -1,0 +1,47 @@
+services:
+  - type: web
+    name: hmc-app
+    env: php
+    buildCommand: composer install
+    startCommand: "sh -c 'apt-get update && apt-get install -y apache2 && a2enmod rewrite && apache2ctl -D FOREGROUND'"
+    envVars:
+      - key: DB_HOST
+        value: "${db.privateUrl}"
+      - key: DB_USER
+        fromDatabase:
+          name: hmc-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: hmc-db
+          property: password
+      - key: DB_NAME
+        value: hmc
+
+  - type: pserv
+    name: hmc-db
+    env: mysql
+    plan: free
+    ipAllowList: []
+    databases:
+      - name: hmc-db
+        user: hmc_user
+        initialQuery: "$(cat project/HMC.sql)"
+    envVars:
+      - key: MYSQL_DATABASE
+        value: hmc
+      - key: MYSQL_USER
+        value: hmc_user
+      - key: MYSQL_PASSWORD
+        value: ${DB_PASSWORD}
+        sync: false
+      - key: MYSQL_ROOT_PASSWORD
+        value: ${MYSQL_ROOT_PASSWORD}
+        sync: false
+
+databases:
+  - name: hmc-db
+    engine: mysql
+    ipAllowList: []
+    previewPlan: free
+    plan: free
