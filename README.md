@@ -131,13 +131,38 @@ HMC-Project-main/
 
 ## 🚀 Installation & Setup
 
-### Prerequisites
+### Quick Start with Docker 🐳 (Recommended)
+
+The easiest way to run HMC is using Docker. No need to install PHP, MySQL separately!
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/pushpa817/HMC-Project-main.git
+cd HMC-Project-main
+
+# 2. Run one command to start everything
+docker-compose up -d
+
+# 3. Access the application
+# Main App: http://localhost
+# phpMyAdmin: http://localhost:8081
+```
+
+**That's it!** All services (PHP, Apache, MySQL, phpMyAdmin) will be running in containers.
+
+For detailed Docker instructions, see [DOCKER_GUIDE.md](DOCKER_GUIDE.md)
+
+---
+
+### Traditional Installation
+
+#### Prerequisites
 - PHP 7.4 or higher
 - MySQL/MariaDB 10.4+
 - Composer
 - Web server (Apache/Nginx)
 
-### Step 1: Clone the Repository
+#### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/pushpa817/HMC-Project-main.git
 cd HMC-Project-main
